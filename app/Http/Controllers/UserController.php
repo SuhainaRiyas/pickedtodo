@@ -17,7 +17,6 @@ class UserController extends Controller
             'password' => 'required|min:6',
             'phone' => 'required|numeric',
         ]);
-        return response()->json(['status'=>'error','validerrors'=>$validator->messages()]);
         if($validator->fails()){
             return response()->json(['status'=>'error','validerrors'=>$validator->messages()]);
         }
